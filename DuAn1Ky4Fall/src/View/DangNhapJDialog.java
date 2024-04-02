@@ -17,7 +17,6 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Đăng Nhập - BeLing");
-
     }
 
     void init() {
@@ -91,6 +90,8 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đăng Nhập BELING", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 153, 153))); // NOI18N
 
         jLabel2.setText("Tên Đăng Nhập:");
+
+        txtTenDangNhap.setText("beling0");
 
         jLabel3.setText("Mật Khẩu");
 

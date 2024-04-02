@@ -62,7 +62,7 @@ public class SanPhamHoaDonDAO extends DuAn1DAO1<SanPhamHoaDon, String> {
     }
 
     public List<SanPhamHoaDon> getAll() {
-        String sql = "select CTSP.MaSPCT,AKMD.TenAoKhoac , CTSP.SoLuongAK,MS.TenMauSac, SZ.tenSize,LA.TenLoaiAo,CTSP.GiaAK,CTSP.GiaAK - case \n"
+        String sql = "SELECT CTSP.MaSPCT,AKMD.TenAoKhoac , CTSP.SoLuongAK,MS.TenMauSac, SZ.tenSize,LA.TenLoaiAo,CTSP.GiaAK,CTSP.GiaAK - case \n"
                 + "	   when DGG.TrangThaiDGG = 0 then CTSP.GiaAK / 100 * DGG.GiaTriDGG\n"
                 + "	   ELSE 0 \n"
                 + "	   END AS 'Gia giam'\n"

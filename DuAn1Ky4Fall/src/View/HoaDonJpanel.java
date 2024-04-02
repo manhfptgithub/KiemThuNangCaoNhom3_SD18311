@@ -370,7 +370,7 @@ public class HoaDonJpanel extends javax.swing.JPanel {
             txtTT.setText(stringThanhToan);
             float tienThua = 0;
             String thanhToan1 = txtTT.getText();
-            thanhToan1 = thanhToan1.replace(",", "");
+            thanhToan1 = thanhToan1.replace(".", "");
             DecimalFormat df = new DecimalFormat("#########");
             float tienKhdua = Float.parseFloat(txtTKT.getText());
             tienThua = tienKhdua - Float.parseFloat(thanhToan1);
@@ -630,15 +630,14 @@ public class HoaDonJpanel extends javax.swing.JPanel {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(txtSoDienThoai, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtTenKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSoDienThoai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTenKhachHang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -741,12 +740,11 @@ public class HoaDonJpanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnChonGiamGia)
                                 .addGap(16, 16, 16))))
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btnDatHang, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -790,7 +788,7 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -859,13 +857,15 @@ public class HoaDonJpanel extends javax.swing.JPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 621, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnXoaHDCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnXoaTatHDCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnXoaHDCT)
+                            .addComponent(btnXoaTatHDCT))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -930,7 +930,7 @@ public class HoaDonJpanel extends javax.swing.JPanel {
             txtMaKhachHang.setText(String.valueOf(kh.getMaKhachHang()));
             txtSoDienThoai.setText(kh.getSoDienThoaiKH());
             txtTenKhachHang.setText(kh.getTenKhachHang());
-           
+
         }
 
         if (luaChon == 1) {
@@ -951,7 +951,7 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         }
         maPGG = list.get(row).getMaPhieuGiamGia();
         String tongTien = txtTongTien.getText();
-        tongTien = tongTien.replace(",", "");
+        tongTien = tongTien.replace(".", "");
         DecimalFormat df = new DecimalFormat("#########");
 
         Double tt = Double.parseDouble(tongTien);
@@ -997,7 +997,6 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         rowhd = tblHoaDon.getSelectedRow();
         txtMaHD.setText(tblHoaDon.getValueAt(rowhd, 0).toString());
         txtMaKhachHang.setText(tblHoaDon.getValueAt(rowhd, 1).toString());
-
         // số điện thoại
         KhachHang kh = khdao.selectById(Integer.parseInt(tblHoaDon.getValueAt(rowhd, 1).toString()));
         txtSoDienThoai.setText(kh.getSoDienThoaiKH());
@@ -1006,14 +1005,13 @@ public class HoaDonJpanel extends javax.swing.JPanel {
             return;
         }
         float tongTien = tinhTongTien();
-
         String patternTienTe = "###,###,###";
         DecimalFormat formatTienTe = new DecimalFormat(patternTienTe);
         String stringTienTe = formatTienTe.format(tongTien);
         txtTongTien.setText(stringTienTe);
         int maHD = Integer.parseInt(tblHoaDon.getValueAt(rowhd, 0).toString());
         fillTableHDCT(maHD);
-        
+
     }//GEN-LAST:event_tblHoaDonMouseClicked
 
     private void txtTimKiemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTimKiemMouseExited
@@ -1088,7 +1086,7 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         } else {
             xoaALLSPHDCT();
         }
-        
+
     }//GEN-LAST:event_btnXoaTatHDCTActionPerformed
 
     private void txtTKTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTKTActionPerformed
@@ -1105,11 +1103,14 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         // TODO add your handling code here:float tienThua = 0;
         float tienThua = 0;
         String thanhToan = txtTT.getText();
-        thanhToan = thanhToan.replace(",", "");
+        thanhToan = thanhToan.replace(".", "");
         DecimalFormat df = new DecimalFormat("#########");
-        float tienKhdua = Float.parseFloat(txtTKT.getText());
-        tienThua = tienKhdua - Float.parseFloat(thanhToan);
-        txtTienThua.setText(String.valueOf(tienThua));
+        if (!txtTKT.getText().equals("")) {
+            float tienKhdua = Float.parseFloat(txtTKT.getText());
+            tienThua = tienKhdua - Float.parseFloat(thanhToan);
+            txtTienThua.setText(String.valueOf(tienThua));
+        }
+
 
     }//GEN-LAST:event_txtTKTKeyReleased
 
@@ -1136,20 +1137,20 @@ public class HoaDonJpanel extends javax.swing.JPanel {
         hd.setTongTien(tongTien);
         hd.setThanhToan(thanhToan);
         hd.setTrangThaiHoaDon("Đã thanh toán");
-        if (hddao.updateThanhToan(hd,maPGG) > 0) {
+        if (hddao.updateThanhToan(hd, maPGG) > 0) {
             JOptionPane.showMessageDialog(this, "Thanh toán thành công .");
             pggdao.updateTTMa(maPGG);
             LichSuPGG lspgg = new LichSuPGG();
             lspgg.setMaphieugiamgia(maPGG);
             lspgg.setMaHoaDon(maHD);
             lspgg.setTrangThaiLS(true);
-            if(maPGG != 0){
+            if (maPGG != 0) {
                 lspggdao.insert(lspgg);
             }
             clearForm();
             fillTableHD();
             fillTableHDCT(-1);
-            maPGG =0 ;
+            maPGG = 0;
         } else {
             JOptionPane.showMessageDialog(this, "Thanh toán không thành công .");
         }
