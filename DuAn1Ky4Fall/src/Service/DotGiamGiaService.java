@@ -4,10 +4,22 @@
  */
 package Service;
 
+import Entity.DotGiamGia;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ADMIN
  */
 public class DotGiamGiaService {
+    private List<DotGiamGia> list = new ArrayList<>();
     
+    public void addDotGiamGia(DotGiamGia dotGiamGia){
+        list.add(dotGiamGia);
+    }
+    
+    public void updateDotGiamGia(DotGiamGia dotGiamGia){
+        
+    }
 }
