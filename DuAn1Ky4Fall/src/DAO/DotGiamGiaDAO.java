@@ -19,7 +19,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
     final String INSERT_SQL = "INSERT INTO tblDotGiamGia(MaDotGiamGia,MaNhanVien,TenDotGiamGia,GiaTriDGG,NgayBatDau,NgayKetThuc,MaLoaiAo,TrangThaiDGG,GhiChuDGG) VALUES(?,?,?,?,?,?,?,?,?)";
     final String UPDATE_SQL = "UPDATE tblDotGiamGia SET MaNhanVien =?, TenDotGiamGia =?, GiaTriDGG =?, NgayBatDau=?,NgayKetThuc=?,MaLoaiAo=?,TrangThaiDGG=?,GhiChuDGG=? WHERE MaDotGiamGia =?";
     final String UPDATE2_SQL = "UPDATE tblDotGiamGia SET TrangThaiDGG = 1 WHERE MaDotGiamGia = ?";
-    final String SELECT_ALL_SQL = "SELECT * FROM tblDotGiamGia WHERE TrangThaiDGG = 0";
+    final String SELECT_ALL_SQL = "SELECT * FROM tblDotGiamGia WHERE TrangThaiDGG = 1";
     final String SELECT_BY_ID_SQL = "SELECT * FROM tblDotGiamGia WHERE TenDotGiamGia like ? ";
     final String SELECT_LAK = "SELECT MaLoaiAo,TenLoaiAo FROM tblLoaiAo";
 

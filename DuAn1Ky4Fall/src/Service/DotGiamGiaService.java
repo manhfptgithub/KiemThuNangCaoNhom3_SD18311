@@ -4,6 +4,7 @@
  */
 package Service;
 
+import DAO.DotGiamGiaDAO;
 import Entity.DotGiamGia;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +14,20 @@ import java.util.List;
  * @author ADMIN
  */
 public class DotGiamGiaService {
-    private List<DotGiamGia> list = new ArrayList<>();
+    private static DotGiamGiaDAO dotGiamGiaDAO = new DotGiamGiaDAO();
+    private static List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
     
     public void addDotGiamGia(DotGiamGia dotGiamGia){
-        list.add(dotGiamGia);
+        dotGiamGiaDAO.insert(dotGiamGia);
     }
     
     public void updateDotGiamGia(DotGiamGia dotGiamGia){
-        
+        dotGiamGiaDAO.update(dotGiamGia);
+    }
+    
+    
+    public static void main(String[] args) {
+        List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
+        System.out.println(list.size());
     }
 }
