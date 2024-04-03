@@ -14,8 +14,8 @@ import java.util.List;
  * @author ADMIN
  */
 public class DotGiamGiaService {
-    private static DotGiamGiaDAO dotGiamGiaDAO = new DotGiamGiaDAO();
-    private static List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
+    private DotGiamGiaDAO dotGiamGiaDAO = new DotGiamGiaDAO();
+    private List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
     
     public void addDotGiamGia(DotGiamGia dotGiamGia){
         dotGiamGiaDAO.insert(dotGiamGia);
@@ -26,8 +26,7 @@ public class DotGiamGiaService {
     }
     
     
-    public static void main(String[] args) {
-        List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
-        System.out.println(list.size());
+    public List<DotGiamGia> getList(){
+        return list ;
     }
 }
