@@ -4,6 +4,7 @@
  */
 package DAO;
 
+import Entity.DotGiamGia;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -13,15 +14,16 @@ import org.junit.Before;
  * @author ADMIN
  */
 public class TestAddDotGiamGia {
+    DotGiamGiaDAO DotGiamGia ;
     @Before
     public void Before(){
-        
+        DotGiamGia = new DotGiamGiaDAO();
     }
     
     
     @Test
     public void testAdd1(){
-        
+        DotGiamGia = null ;
     }
     
 }
