@@ -24,7 +24,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
     final String SELECT_LAK = "SELECT MaLoaiAo,TenLoaiAo FROM tblLoaiAo";
 
     @Override
-    public void insert(DotGiamGia entity) {
+    public void insert(DotGiamGia entity) { 
          JDBCHelper.executeUpdate(INSERT_SQL, entity.getMaDotGiamGia(),entity.getMaNhanVien(),entity.getTenDotGiamGia(),entity.getGiaTriDGG(),entity.getNgayBatDau(),entity.getNgayKetThuc(),entity.getSanPhamDGG(),entity.isTrangThai(),entity.getGhiChuDGG());
     }
 
@@ -72,19 +72,14 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
         return listGG;
     }
 
-    
     public void update21(String  entity ) {
         JDBCHelper.executeUpdate(UPDATE2_SQL,entity);
     }
 
-   
     public List<DotGiamGia> selectByKeyWord(String keyword){ 
         String sql = "SELECT * FROM tblDotGiamGia WHERE TenDotGiamGia like ? AND TrangThaiDGG = 0";
         return this.selectBySql(sql, "%"+keyword+"%");
     }
-
-
-
     
     public void setNgay(){
             String sql = "UPDATE tblDotGiamGia SET TrangThaiDGG = 1 WHERE NgayKetThuc < CONVERT(DATE, GETDATE(), 103)";

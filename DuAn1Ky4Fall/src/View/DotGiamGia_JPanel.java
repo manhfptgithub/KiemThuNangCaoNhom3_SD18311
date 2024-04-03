@@ -35,6 +35,7 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
     LoaiAKDAO akdao = new LoaiAKDAO();
     DotGGsimpleDAO ggs = new DotGGsimpleDAO();
     int row = 0;
+
     public DotGiamGia_JPanel() {
         initComponents();
         fillTable();
@@ -42,161 +43,164 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
         fillDGGS();
         setNgay();
     }
-    public void setNgay(){
-        
-            try {
-                ggdao.setNgay();
-                this.fillTable();
-                this.fillDGGS();
-                this.fillLAK();
-                
-                
-            } catch (Exception e) {
-                
-         } }
- public void fillTable(){ 
-         DefaultTableModel model = (DefaultTableModel) tblDGG.getModel();
+
+    public void setNgay() {
+
+        try {
+            ggdao.setNgay();
+            this.fillTable();
+            this.fillDGGS();
+            this.fillLAK();
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tblDGG.getModel();
         model.setRowCount(0);
         SimpleDateFormat sp = new SimpleDateFormat("dd-MM-yyyy");
         try {
             String keyword = txtTimTen.getText();
             List<DotGiamGia> ds = ggdao.selectByKeyWord(keyword);
             List<DotGiamGia> list = ggdao.selectAll();
-            for(DotGiamGia gg:ds){
+            for (DotGiamGia gg : ds) {
                 Object[] row = {
-                   gg.getMaDotGiamGia(),
-                   gg.getMaNhanVien(),
-                   gg.getTenDotGiamGia(),
-                   gg.getGiaTriDGG(),
-                   gg.getNgayBatDau(),
-                  gg.getNgayKetThuc(),
-                   gg.getSanPhamDGG(),
-                   gg.isTrangThai()?"Không Hoạt Động":"Đang Hoạt Động",
-                   gg.getGhiChuDGG(),
-                };
+                    gg.getMaDotGiamGia(),
+                    gg.getMaNhanVien(),
+                    gg.getTenDotGiamGia(),
+                    gg.getGiaTriDGG(),
+                    gg.getNgayBatDau(),
+                    gg.getNgayKetThuc(),
+                    gg.getSanPhamDGG(),
+                    gg.isTrangThai() ? "Không Hoạt Động" : "Đang Hoạt Động",
+                    gg.getGhiChuDGG(),};
                 model.addRow(row);
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
         }
-     }
-         public void fillLAK(){
-             DefaultTableModel model = (DefaultTableModel) tblLoaiAK.getModel();
+    }
+
+    public void fillLAK() {
+        DefaultTableModel model = (DefaultTableModel) tblLoaiAK.getModel();
         model.setRowCount(0);
-             try {
-                 List<AKGG> akl = akdao.selectAll();
-                 for(AKGG ak:akl){
-                     Object[] row ={
-                         ak.getMaLAK(),
-                         ak.getTenLAK(),
-                         
-                     };
-                     model.addRow(row);
-                 }
-             } catch (Exception e) {
-                 MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
-             }
-         }
-         public void fillDGGS(){
-             DefaultTableModel model = (DefaultTableModel) tblDGG2.getModel();
-            model.setRowCount(0);
-             try {
-                 List<DotGGsimple> lggs = ggs.selectAll();
-                 for(DotGGsimple ggspl:lggs){
-                     Object[] row ={
-                         ggspl.getMaDGG(),
-                         ggspl.getTenDGG(),
-                         ggspl.getGiatriDGG(),
-                         
-                     };
-                     model.addRow(row);
-                     
-                 }
-             } catch (Exception e) {
-                 MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
-             }
-         }
-         public DotGiamGia getFrom(){
-             SimpleDateFormat sp = new SimpleDateFormat("yyyy-MM-dd");
-             DotGiamGia dgg = new DotGiamGia();
-             dgg.setMaDotGiamGia(txtMaDotGiamGia.getText());
-             dgg.setMaNhanVien(txtMaNV.getText());
-             dgg.setTenDotGiamGia(txtTenDotGiamGia.getText());
-             dgg.setGiaTriDGG(Integer.parseInt(txtGiamPhanTram.getText()));
-             dgg.setNgayBatDau(sp.format(txtNgayBatDau.getDate()));
-             dgg.setNgayKetThuc(sp.format(txtNgayKetThuc.getDate()));
-             dgg.setSanPhamDGG(txtSanPhamDGG.getText());
-             if(cboTrangThai.getSelectedItem()=="Đang Hoạt Động"){
-                 
-                 dgg.setTrangThai(false);     
-             }
-             else{
-                 dgg.setTrangThai(true);
-             }
-             
-             dgg.setGhiChuDGG(txtMota.getText());
-             return dgg; 
-         }
-         public void clearFrom(){
-             txtMaDotGiamGia.setText("");
-             txtMaNV.setText("");
-             txtTenDotGiamGia.setText("");
-             txtGiamPhanTram.setText("");
-             
-             txtMota.setText("");
-         }
-         private void setForm(DotGiamGia gg)throws FileNotFoundException, ParseException{
-             SimpleDateFormat sp = new SimpleDateFormat("dd-MM-yyyy");
-             txtMaDotGiamGia.setText(gg.getMaDotGiamGia());
-             txtMaNV.setText(gg.getMaNhanVien());
-             txtTenDotGiamGia.setText(gg.getTenDotGiamGia());
-             //txtGiamPhanTram.setText(Integer.parseInt(gg.getGiaTriDGG()));
-             txtNgayBatDau.setDate(sp.parse(gg.getNgayBatDau()));
-             txtSanPhamDGG.setText(gg.getSanPhamDGG());
-             txtNgayKetThuc.setDate(sp.parse(gg.getNgayKetThuc()));
-             txtMota.setText(gg.getGhiChuDGG());
-         }
-        
-         
-         void insert(){ 
-             DotGiamGia model = getFrom();
-            try {
-                ggdao.insert(model);
-                this.fillTable();
-                this.fillDGGS();
-                this.fillLAK();
-                this.clearFrom();
-                MsgBox.alert(this, "Thêm mới thành công !");
-            } catch (Exception e) {
-                MsgBox.alert(this, "Thêm mới thất bại !");
+        try {
+            List<AKGG> akl = akdao.selectAll();
+            for (AKGG ak : akl) {
+                Object[] row = {
+                    ak.getMaLAK(),
+                    ak.getTenLAK(),};
+                model.addRow(row);
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+        }
     }
+
+    public void fillDGGS() {
+        DefaultTableModel model = (DefaultTableModel) tblDGG2.getModel();
+        model.setRowCount(0);
+        try {
+            List<DotGGsimple> lggs = ggs.selectAll();
+            for (DotGGsimple ggspl : lggs) {
+                Object[] row = {
+                    ggspl.getMaDGG(),
+                    ggspl.getTenDGG(),
+                    ggspl.getGiatriDGG(),};
+                model.addRow(row);
+
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu");
+        }
     }
-         void update(){
-             DotGiamGia model = getFrom();
-            try {
-                ggdao.update(model);
-                this.fillTable();
-                this.fillDGGS();
-                this.fillLAK();
-                this.clearFrom();
-                MsgBox.alert(this, "sửa thành công !");
-            } catch (Exception e) {
-                MsgBox.alert(this, "sửa thất bại !");
-         }
-         }
-         void delete(){
-             DotGiamGia model = getFrom();
-            try {
-                ggdao.update(model);
-                this.fillTable();
-                this.fillDGGS();
-                this.fillLAK();
-                this.clearFrom();
-                MsgBox.alert(this, "xóa thành công !");
-            } catch (Exception e) {
-                MsgBox.alert(this, "xóa thất bại !");
-         }
-         }
+
+    public DotGiamGia getFrom() {
+        SimpleDateFormat sp = new SimpleDateFormat("yyyy-MM-dd");
+        DotGiamGia dgg = new DotGiamGia();
+        dgg.setMaDotGiamGia(txtMaDotGiamGia.getText());
+        dgg.setMaNhanVien(txtMaNV.getText());
+        dgg.setTenDotGiamGia(txtTenDotGiamGia.getText());
+        dgg.setGiaTriDGG(Integer.parseInt(txtGiamPhanTram.getText()));
+        dgg.setNgayBatDau(sp.format(txtNgayBatDau.getDate()));
+        dgg.setNgayKetThuc(sp.format(txtNgayKetThuc.getDate()));
+        dgg.setSanPhamDGG(txtSanPhamDGG.getText());
+        if (cboTrangThai.getSelectedItem() == "Đang Hoạt Động") {
+
+            dgg.setTrangThai(false);
+        } else {
+            dgg.setTrangThai(true);
+        }
+
+        dgg.setGhiChuDGG(txtMota.getText());
+        return dgg;
+    }
+
+    public void clearFrom() {
+        txtMaDotGiamGia.setText("");
+        txtMaNV.setText("");
+        txtTenDotGiamGia.setText("");
+        txtGiamPhanTram.setText("");
+
+        txtMota.setText("");
+    }
+
+    private void setForm(DotGiamGia gg) throws FileNotFoundException, ParseException {
+        SimpleDateFormat sp = new SimpleDateFormat("dd-MM-yyyy");
+        txtMaDotGiamGia.setText(gg.getMaDotGiamGia());
+        txtMaNV.setText(gg.getMaNhanVien());
+        txtTenDotGiamGia.setText(gg.getTenDotGiamGia());
+        //txtGiamPhanTram.setText(Integer.parseInt(gg.getGiaTriDGG()));
+        txtNgayBatDau.setDate(sp.parse(gg.getNgayBatDau()));
+        txtSanPhamDGG.setText(gg.getSanPhamDGG());
+        txtNgayKetThuc.setDate(sp.parse(gg.getNgayKetThuc()));
+        txtMota.setText(gg.getGhiChuDGG());
+    }
+
+    void insert() {
+        DotGiamGia model = getFrom();
+        try {
+            ggdao.insert(model);
+            this.fillTable();
+            this.fillDGGS();
+            this.fillLAK();
+            this.clearFrom();
+            MsgBox.alert(this, "Thêm mới thành công !");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Thêm mới thất bại !");
+        }
+    }
+
+    void update() {
+        DotGiamGia model = getFrom();
+        try {
+            ggdao.update(model);
+            this.fillTable();
+            this.fillDGGS();
+            this.fillLAK();
+            this.clearFrom();
+            MsgBox.alert(this, "sửa thành công !");
+        } catch (Exception e) {
+            MsgBox.alert(this, "sửa thất bại !");
+        }
+    }
+
+    void delete() {
+        DotGiamGia model = getFrom();
+        try {
+            ggdao.update(model);
+            this.fillTable();
+            this.fillDGGS();
+            this.fillLAK();
+            this.clearFrom();
+            MsgBox.alert(this, "xóa thành công !");
+        } catch (Exception e) {
+            MsgBox.alert(this, "xóa thất bại !");
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -266,12 +270,6 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
         jLabel8.setText("Thời Gian Kết thúc");
 
         jLabel9.setText("Mô Tả");
-
-        txtMota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMotaActionPerformed(evt);
-            }
-        });
 
         jLabel11.setText("Trạng Thái");
 
@@ -637,10 +635,6 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMotaActionPerformed
-
-    }//GEN-LAST:event_txtMotaActionPerformed
-
     private void txtMaDotGiamGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaDotGiamGiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaDotGiamGiaActionPerformed
@@ -677,13 +671,13 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
     private void tblDGGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDGGMouseClicked
         int row = tblDGG.getSelectedRow();
         SimpleDateFormat sp = new SimpleDateFormat("yyyy-MM-dd");
-        if(row<0){
+        if (row < 0) {
             return;
         }
-        txtMaDotGiamGia.setText( tblDGG.getValueAt(row, 0).toString());
-        txtMaNV.setText( tblDGG.getValueAt(row, 1).toString());
-        txtTenDotGiamGia.setText( tblDGG.getValueAt(row, 2).toString());
-        txtGiamPhanTram.setText( tblDGG.getValueAt(row, 3).toString());
+        txtMaDotGiamGia.setText(tblDGG.getValueAt(row, 0).toString());
+        txtMaNV.setText(tblDGG.getValueAt(row, 1).toString());
+        txtTenDotGiamGia.setText(tblDGG.getValueAt(row, 2).toString());
+        txtGiamPhanTram.setText(tblDGG.getValueAt(row, 3).toString());
         try {
             txtNgayBatDau.setDate(sp.parse(tblDGG.getValueAt(row, 4).toString()));
         } catch (ParseException ex) {
@@ -695,7 +689,7 @@ public class DotGiamGia_JPanel extends javax.swing.JPanel {
 //            Logger.getLogger(Form_DotGiamGia.class.getName()).log(Level.SEVERE, null, ex);
         }
         txtSanPhamDGG.setText(tblDGG.getValueAt(row, 6).toString());
-        txtMota.setText( tblDGG.getValueAt(row, 8).toString());
+        txtMota.setText(tblDGG.getValueAt(row, 8).toString());
         tabs.setSelectedIndex(0);
 
     }//GEN-LAST:event_tblDGGMouseClicked
