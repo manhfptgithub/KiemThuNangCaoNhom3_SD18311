@@ -66,6 +66,9 @@ public class AoKhoacMuaDongService {
     }
 
     public void deleteAoKhoacMuaDong(String maSanPham) {
+        if (maSanPham.length() == 0) {
+            throw new IllegalArgumentException("Ma ko dc de trong");
+        }
         aoKhoacMuaDong.removeIf(aoKhoac -> aoKhoac.getMaSanPham().equals(maSanPham));
     }
 

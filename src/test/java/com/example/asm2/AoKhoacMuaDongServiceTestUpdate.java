@@ -82,5 +82,4 @@ public class AoKhoacMuaDongServiceTestUpdate {
         assertEquals(newAoKhoac.getGhiChu(), aoKhoacMuaDongService.getListAoKhoacMuaDong().get(0).getGhiChu());
         assertEquals(newAoKhoac.getTrangThai(), aoKhoacMuaDongService.getListAoKhoacMuaDong().get(0).getTrangThai());
     }
-
 }
