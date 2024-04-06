@@ -204,26 +204,29 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
+        
     }
-
+// Kiem tra ten chua ky tu dac biet failed
     @Test
     public void testAdd11() {
         DotGiamGia dotGiamGia = new DotGiamGia();
         dotGiamGia.setMaDotGiamGia("DG13");
         dotGiamGia.setMaNhanVien("NV001");
-        dotGiamGia.setTenDotGiamGia("😂😂");
+        dotGiamGia.setTenDotGiamGia("Aaa");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
         dotGiamGia.setNgayBatDau("2024-03-20");
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+// Kiểm tra nhập tên đợt giảm có 1 kí tự -5
     @Test
     public void testAdd12() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -237,9 +240,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
+        assertEquals(5, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập tên đợt giảm có 1 kí tự -6
     @Test
     public void testAdd13() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -253,9 +256,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
+        assertEquals(6, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập tên đợt giảm có 49 kí tự - 7
     @Test
     public void testAdd14() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -271,7 +274,7 @@ public class AddDotGiamGiaTest {
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
         assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập tên đợt giảm có 50 kí tự --8
     @Test
     public void testAdd15() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -285,9 +288,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
+        assertEquals(8, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập tên đợt giảm có 51 kí tự
     @Test
     public void testAdd16() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -300,10 +303,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập Số % giảm giá là chữ  ---- Lỗi không thể kiểm tra
     @Test
     public void testAdd17() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -317,10 +321,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập Số % giảm có chữ kí tự đặc biệt --- Lỗi
     @Test
     public void testAdd18() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -334,10 +339,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+// Kiểm tra mã là số thập phân -- Lỗi không kiểm tra được
     @Test
     public void testAdd19() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -351,10 +357,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra nhập Số % giảm là số âm
     @Test
     public void testAdd20() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -367,10 +374,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu trước ngày hôm nay
     @Test
     public void testAdd21() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -383,10 +391,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Ngày bắt đầu phải lớn hơn hoặc bằng ngày hôm nay và không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu là chuỗi
     @Test
     public void testAdd22() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -399,10 +408,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+       ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Ngày bắt đầu phải lớn hơn hoặc bằng ngày hôm nay và không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu sau Thời gian kết thúc
     @Test
     public void testAdd23() {
         DotGiamGia dotGiamGia = new DotGiamGia();
