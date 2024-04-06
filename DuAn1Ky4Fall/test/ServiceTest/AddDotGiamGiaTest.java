@@ -139,7 +139,7 @@ public class AddDotGiamGiaTest {
         ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
-
+//Kiem tra ma nhan vien chua co tronng he thong
     @Test
     public void testAdd7() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -152,10 +152,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+//         NullPointerException("Mã nhân viên chưa có trong hệ thống .");
+        ee.expect(NullPointerException.class);
+        ee.expectMessage("Mã nhân viên chưa có trong hệ thống .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiem tra ma nhan vien chua ky tu dac biet
     @Test
     public void testAdd8() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -168,10 +170,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiem tra ma nhan vien chua ngay thang
     @Test
     public void testAdd9() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -184,10 +187,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setNgayKetThuc("2024-03-23");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra tên đợt giảm giá để trống
     @Test
     public void testAdd10() {
         DotGiamGia dotGiamGia = new DotGiamGia();

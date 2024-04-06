@@ -5,6 +5,7 @@
 package Service;
 
 import DAO.DotGiamGiaDAO;
+import DAO.NhanVienDao;
 import Entity.DotGiamGia;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class DotGiamGiaService {
 
     private DotGiamGiaDAO dotGiamGiaDAO = new DotGiamGiaDAO();
     private List<DotGiamGia> list = dotGiamGiaDAO.selectAll();
+    public NhanVienDao nhanVienDao = new NhanVienDao();
 
     public void addDotGiamGia(DotGiamGia dotGiamGia) {
         if (dotGiamGia.getMaDotGiamGia() == null || dotGiamGia.getMaDotGiamGia().length() < 1 || dotGiamGia.getMaDotGiamGia().length() > 15) {
@@ -37,7 +39,16 @@ public class DotGiamGiaService {
         if (!matcher1.matches()) {
             throw new IllegalArgumentException("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
         }
-        
+        if(nhanVienDao.selectById(dotGiamGia.getMaNhanVien()) == null){
+            throw new NullPointerException("Mã nhân viên chưa có trong hệ thống .");
+        }
+        if (dotGiamGia.getTenDotGiamGia() == null || dotGiamGia.getTenDotGiamGia().length() < 1 || dotGiamGia.getTenDotGiamGia().length() > 50) {
+            throw new IllegalArgumentException("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
+        }
+        Matcher matcher2 = pattern.matcher(dotGiamGia.getTenDotGiamGia());
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
+        }
         dotGiamGiaDAO.insert(dotGiamGia);
     }
 
@@ -49,5 +60,6 @@ public class DotGiamGiaService {
         list = dotGiamGiaDAO.selectAll();
         return list;
     }
+    
     
 }
