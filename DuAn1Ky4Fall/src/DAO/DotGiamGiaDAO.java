@@ -64,7 +64,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
                 entity.setSanPhamDGG(rs.getString("MaLoaiAo"));
                 entity.setTrangThai(rs.getBoolean("TrangThaiDGG"));
                 entity.setGhiChuDGG(rs.getString("GhiChuDGG"));
-                 listGG.add(entity);
+                listGG.add(entity);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,7 +86,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
         JDBCHelper.executeUpdate(sql);
     }
     
-
+    
     
     
     

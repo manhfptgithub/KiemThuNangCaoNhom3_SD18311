@@ -103,10 +103,12 @@ public class DotGiamGia {
     public void setSanPhamDGG(String SanPhamDGG){
         this.SanPhamDGG = SanPhamDGG;
     }
+
     @Override
     public String toString() {
-        return "DotGiamGia{" + "MaDotGiamGia=" + MaDotGiamGia + ", MaNhanVien=" + MaNhanVien + ", TenDotGiamGia=" + TenDotGiamGia + ", GiaTriDGG=" + GiaTriDGG + ", NgayBatDau=" + NgayBatDau + ", NgayKetThuc=" + NgayKetThuc + ", TrangThai=" + TrangThai + ", GhiChuDGG=" + GhiChuDGG + '}';
+        return "DotGiamGia{" + "MaDotGiamGia=" + MaDotGiamGia +"}";
     }
+   
     
     
 }
