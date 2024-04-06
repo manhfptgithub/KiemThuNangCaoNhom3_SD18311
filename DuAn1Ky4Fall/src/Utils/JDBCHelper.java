@@ -18,7 +18,7 @@ public class JDBCHelper {
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     static String dbUrl = "jdbc:sqlserver://localhost;port=1433;databaseName=DUAN1_NHOM1";
     static String user = "sa";
-    static String password = "12345manh";
+    static String password = "123456";
 
     static {
         try {
