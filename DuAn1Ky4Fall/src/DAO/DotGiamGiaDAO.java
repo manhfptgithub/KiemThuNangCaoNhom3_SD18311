@@ -21,6 +21,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
     final String UPDATE2_SQL = "UPDATE tblDotGiamGia SET TrangThaiDGG = 1 WHERE MaDotGiamGia = ?";
     final String SELECT_ALL_SQL = "SELECT * FROM tblDotGiamGia ";
     final String SELECT_BY_ID_SQL = "SELECT * FROM tblDotGiamGia WHERE TenDotGiamGia like ? ";
+    final String SELECT_BY_ID2 = "SELECT * FROM tblDotGiamGia WHERE MaDotGiamGia = ? ";
     final String SELECT_LAK = "SELECT MaLoaiAo,TenLoaiAo FROM tblLoaiAo";
 
     @Override
@@ -40,9 +41,8 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
 
     @Override
     public DotGiamGia selectById(String key) {
-        List<DotGiamGia> list = selectBySql(SELECT_BY_ID_SQL, key);
-        if(list.isEmpty()){
-                         
+        List<DotGiamGia> list = selectBySql(SELECT_BY_ID2, key);
+        if(list.isEmpty()){   
             return null;
         }
         return list.get(0);

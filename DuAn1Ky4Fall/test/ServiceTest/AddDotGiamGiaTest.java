@@ -37,13 +37,13 @@ public class AddDotGiamGiaTest {
     @Test
     public void testAdd1() {
         DotGiamGia dotGiamGia = new DotGiamGia();
-        dotGiamGia.setMaDotGiamGia("DG006");
+        dotGiamGia.setMaDotGiamGia("DG06");
         dotGiamGia.setMaNhanVien("NV001");
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -62,8 +62,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
@@ -80,8 +80,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -97,8 +97,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -114,10 +114,10 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
-        dotGiamGia.setGhiChuDGG("Mo");
+        dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
         assertEquals(4, dotGiamGiaService.getList().size());
         assertTrue(dotGiamGiaService.getList().get(3).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
@@ -131,12 +131,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Mã nhân viên không được để trống .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiem tra ma nhan vien chua co tronng he thong
@@ -148,8 +148,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
 //         NullPointerException("Mã nhân viên chưa có trong hệ thống .");
@@ -166,12 +166,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Mã nhân viên không được chứa ký tự đặc biệt .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiem tra ma nhan vien chua ngay thang
@@ -183,12 +183,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Mã nhân viên không được để trống và phải chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Mã nhân viên không được chứa ký tự đặc biệt .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra tên đợt giảm giá để trống
@@ -200,12 +200,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Tên đợt giảm giá không được để trống phải chứa từ 1 đến 50 kí tự .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
         
     }
@@ -215,15 +215,15 @@ public class AddDotGiamGiaTest {
         DotGiamGia dotGiamGia = new DotGiamGia();
         dotGiamGia.setMaDotGiamGia("DG13");
         dotGiamGia.setMaNhanVien("NV001");
-        dotGiamGia.setTenDotGiamGia("Aaa");
+        dotGiamGia.setTenDotGiamGia("##");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Tên đợt giảm giá không được chứa kí tự đặc biệt .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 // Kiểm tra nhập tên đợt giảm có 1 kí tự -5
@@ -235,8 +235,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("N");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -251,8 +251,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("NN");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -267,8 +267,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Nguyen Hung Manh Nguyen Hung Manh  Nguyen Hung Ma");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -283,8 +283,8 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Nguyen Hung Manh Nguyen Hung Manh  Nguyen Hung Man");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
@@ -299,12 +299,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Nguyen Hung Manh Nguyen Hung Manh  Nguyen Hung Manh");
         dotGiamGia.setGiaTriDGG(10);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Tên đợt giảm giá không được để trống và phải chứa từ 1 đến 50 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Tên đợt giảm giá không được để trống phải chứa từ 1 đến 50 kí tự .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra nhập Số % giảm giá là chữ  ---- Lỗi không thể kiểm tra
@@ -317,12 +317,12 @@ public class AddDotGiamGiaTest {
         Integer gt = Integer.parseInt("Manh");
         dotGiamGia.setGiaTriDGG(gt);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự  .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra nhập Số % giảm có chữ kí tự đặc biệt --- Lỗi
@@ -332,15 +332,15 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setMaDotGiamGia("DG20");
         dotGiamGia.setMaNhanVien("NV001");
         dotGiamGia.setTenDotGiamGia("Test 2024");
-        Integer gt = Integer.parseInt("😂😂");
+        Integer gt = Integer.parseInt("##");
         dotGiamGia.setGiaTriDGG(gt);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Số % giảm không được có kí tự đặc biệt .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 // Kiểm tra mã là số thập phân -- Lỗi không kiểm tra được
@@ -353,12 +353,12 @@ public class AddDotGiamGiaTest {
         Integer gt = Integer.parseInt("4.4");
         dotGiamGia.setGiaTriDGG(gt);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và phải lớn hơn 0 .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra nhập Số % giảm là số âm
@@ -370,12 +370,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(-5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và không được chứa kí tự đặc biệt");
+        ee.expectMessage("Số % giảm không được để trống và phải là số nguyên chứa từ 1 đến 10 kí tự và phải lớn hơn 0 .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu trước ngày hôm nay
@@ -387,12 +387,12 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-19");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-05");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Ngày bắt đầu phải lớn hơn hoặc bằng ngày hôm nay và không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc");
+        ee.expectMessage("Ngày bắt đầu phải lớn hơn hoặc bằng ngày hôm nay .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu là chuỗi
@@ -405,11 +405,11 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
         dotGiamGia.setNgayBatDau("manh");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
        ee.expect(IllegalArgumentException.class);
-        ee.expectMessage("Ngày bắt đầu phải lớn hơn hoặc bằng ngày hôm nay và không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc");
+        ee.expectMessage("Ngày bắt đầu không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
     }
 //Kiểm tra thêm đợt giảm giá với trường Thời Gian Bắt Đầu sau Thời gian kết thúc
@@ -421,14 +421,15 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-04-24");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-06");
+        dotGiamGia.setNgayKetThuc("2024-04-01");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Ngày bắt đầu không được chứa chuỗi kí tự và không được lớn hơn ngày kết thúc .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra thêm đợt giảm giá với trường ngày kết thúc là chuỗi
     @Test
     public void testAdd24() {
         DotGiamGia dotGiamGia = new DotGiamGia();
@@ -437,28 +438,30 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-09");
         dotGiamGia.setNgayKetThuc("manh");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
+        ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Ngày kết thúc không được chứa chuỗi kí tự và không được nhỏ hơn ngày bắt đầu .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
-
+//Kiểm tra mã đã tồn tại
     @Test
     public void testAdd25() {
         DotGiamGia dotGiamGia = new DotGiamGia();
-        dotGiamGia.setMaDotGiamGia("DG27");
+        dotGiamGia.setMaDotGiamGia("DG06");
         dotGiamGia.setMaNhanVien("NV001");
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-03-20");
-        dotGiamGia.setNgayKetThuc("2024-03-23");
+        dotGiamGia.setNgayBatDau("2024-04-07");
+        dotGiamGia.setNgayKetThuc("2024-04-09");
         dotGiamGia.setTrangThai(false);
         dotGiamGia.setGhiChuDGG("Mô tả");
+         ee.expect(IllegalArgumentException.class);
+        ee.expectMessage("Mã đợt giảm giá đã có trong cơ sở dữ liệu .");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
     }
 
 }
