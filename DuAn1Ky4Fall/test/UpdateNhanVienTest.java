@@ -74,7 +74,7 @@ public class UpdateNhanVienTest {
     }
    
     //Sửa nhân viên với mã trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien2(){
         NhanVien nhanVien = new NhanVien();
         //
@@ -117,7 +117,7 @@ public class UpdateNhanVienTest {
     
     
     //Sửa nhân viên với CCCD trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien3(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -155,7 +155,7 @@ public class UpdateNhanVienTest {
     
     //Sửa nhân viên CCCD khi chứa chữ 
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien4(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -192,7 +192,7 @@ public class UpdateNhanVienTest {
     }
     
     //Sửa nhân viên với SỐ điẹn thoại trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien5(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -230,7 +230,7 @@ public class UpdateNhanVienTest {
     
     
     //Sửa nhân viên với email trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien6(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -268,7 +268,7 @@ public class UpdateNhanVienTest {
     
     
     //Sửa nhân viên với địa chỉ trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien7(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -306,7 +306,7 @@ public class UpdateNhanVienTest {
     
     
     //Sửa nhân viên với ghi chú trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien8(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -344,7 +344,7 @@ public class UpdateNhanVienTest {
     
     
     //Sửa nhân viên với tên có số
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien9(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");
@@ -381,7 +381,7 @@ public class UpdateNhanVienTest {
     }
     
     //Sửa nhân viên với ngày sinh lớn hơn ngày hiện tại
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void  testUpdateNhanVien10(){
         NhanVien nhanVien = new NhanVien();
     nhanVien.setMaNV("NV0001");

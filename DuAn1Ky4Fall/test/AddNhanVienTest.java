@@ -68,10 +68,10 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra mã trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien2() {
         NhanVien nhanVien = new NhanVien();
-//        nhanVien.setMaNV("NV0006");
+        nhanVien.setMaNV("");
         nhanVien.setTenNV("Nguyễn Tọng Hùng");
         nhanVien.setGioitinh(true);
         Calendar cal = Calendar.getInstance();
@@ -87,11 +87,11 @@ public class AddNhanVienTest {
         nhanVienService.addNhanVien(nhanVien);
         assertEquals(2, nhanVienService.getList().size());
         assertTrue(nhanVienService.getList().get(1).getMaNV().equals(nhanVien.getMaNV()));
-
+        
     }
 
     //Kiểm tra tên trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien3() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -114,7 +114,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra CCCD có chữ
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien4() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -136,7 +136,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra CCCD trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien5() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -159,7 +159,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra SDT trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien6() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -182,7 +182,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra email trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien7() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -205,7 +205,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra địa chỉ trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien8() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -228,7 +228,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra ghi chú trống
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien9() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -251,7 +251,7 @@ public class AddNhanVienTest {
     }
     //Kiểm tra ngày sinh lớn hơn ngày hiện tại
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien10() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -274,7 +274,7 @@ public class AddNhanVienTest {
     }
 
     //kiểm tra số CCCD lớn hơn 12 chữ số
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien11() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -297,7 +297,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra số điện thoại dài hơn 10 chữ số
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien12() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -320,7 +320,7 @@ public class AddNhanVienTest {
     }
 
     //Kiểm tra thêm với số điện thoại là chữ
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien13() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -343,7 +343,7 @@ public class AddNhanVienTest {
     }
 
     //Thêm nhân viên với email ko có @
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien14() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
@@ -366,7 +366,7 @@ public class AddNhanVienTest {
     }
 
     //Thêm nhân viên với tên có số
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAddNhanVien15() {
         NhanVien nhanVien = new NhanVien();
         nhanVien.setMaNV("NV0005");
