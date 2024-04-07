@@ -1,9 +1,7 @@
-
 package DAO;
 
 import Entity.AKGG;
 import Entity.DotGiamGia;
-
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -12,9 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import Utils.JDBCHelper;
 
-
-public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
-    
+public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia, String> {
 
     final String INSERT_SQL = "INSERT INTO tblDotGiamGia(MaDotGiamGia,MaNhanVien,TenDotGiamGia,GiaTriDGG,NgayBatDau,NgayKetThuc,MaLoaiAo,TrangThaiDGG,GhiChuDGG) VALUES(?,?,?,?,?,?,?,?,?)";
     final String UPDATE_SQL = "UPDATE tblDotGiamGia SET MaNhanVien =?, TenDotGiamGia =?, GiaTriDGG =?, NgayBatDau=?,NgayKetThuc=?,MaLoaiAo=?,TrangThaiDGG=?,GhiChuDGG=? WHERE MaDotGiamGia =?";
@@ -25,13 +21,13 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
     final String SELECT_LAK = "SELECT MaLoaiAo,TenLoaiAo FROM tblLoaiAo";
 
     @Override
-    public void insert(DotGiamGia entity) { 
-         JDBCHelper.executeUpdate(INSERT_SQL, entity.getMaDotGiamGia(),entity.getMaNhanVien(),entity.getTenDotGiamGia(),entity.getGiaTriDGG(),entity.getNgayBatDau(),entity.getNgayKetThuc(),entity.getSanPhamDGG(),entity.isTrangThai(),entity.getGhiChuDGG());
+    public void insert(DotGiamGia entity) {
+        JDBCHelper.executeUpdate(INSERT_SQL, entity.getMaDotGiamGia(), entity.getMaNhanVien(), entity.getTenDotGiamGia(), entity.getGiaTriDGG(), entity.getNgayBatDau(), entity.getNgayKetThuc(), entity.getSanPhamDGG(), entity.isTrangThai(), entity.getGhiChuDGG());
     }
 
     @Override
     public void update(DotGiamGia entity) {
-        JDBCHelper.executeUpdate(UPDATE_SQL,entity.getMaNhanVien(),entity.getTenDotGiamGia(),entity.getGiaTriDGG(),entity.getNgayBatDau(),entity.getNgayKetThuc(),entity.getSanPhamDGG(),entity.isTrangThai(),entity.getGhiChuDGG(),entity.getMaDotGiamGia());
+        JDBCHelper.executeUpdate(UPDATE_SQL, entity.getMaNhanVien(), entity.getTenDotGiamGia(), entity.getGiaTriDGG(), entity.getNgayBatDau(), entity.getNgayKetThuc(), entity.getSanPhamDGG(), entity.isTrangThai(), entity.getGhiChuDGG(), entity.getMaDotGiamGia());
     }
 
     @Override
@@ -42,7 +38,7 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
     @Override
     public DotGiamGia selectById(String key) {
         List<DotGiamGia> list = selectBySql(SELECT_BY_ID2, key);
-        if(list.isEmpty()){   
+        if (list.isEmpty()) {
             return null;
         }
         return list.get(0);
@@ -68,30 +64,27 @@ public class DotGiamGiaDAO extends DuAn1DAO<DotGiamGia,String> {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } 
+        }
         return listGG;
     }
 
-    public void update21(String  entity ) {
-        JDBCHelper.executeUpdate(UPDATE2_SQL,entity);
+    public void update21(String entity) {
+        JDBCHelper.executeUpdate(UPDATE2_SQL, entity);
     }
 
-    public List<DotGiamGia> selectByKeyWord(String keyword){ 
+    public List<DotGiamGia> selectByKeyWord(String keyword) {
         String sql = "SELECT * FROM tblDotGiamGia WHERE TenDotGiamGia like ? AND TrangThaiDGG = 0";
-        return this.selectBySql(sql, "%"+keyword+"%");
+        return this.selectBySql(sql, "%" + keyword + "%");
     }
-    
-    public void setNgay(){
-            String sql = "UPDATE tblDotGiamGia SET TrangThaiDGG = 1 WHERE NgayKetThuc < CONVERT(DATE, GETDATE(), 103)";
+
+    public void setNgay() {
+        String sql = "UPDATE tblDotGiamGia SET TrangThaiDGG = 1 WHERE NgayKetThuc < CONVERT(DATE, GETDATE(), 103)";
         JDBCHelper.executeUpdate(sql);
     }
-    
-    
-    
-    
-    
-    
-    
 
-   
+    public void deleteDotGiamGia() {
+        String sql = "DELETE FROM tblDotGiamGia";
+        JDBCHelper.executeUpdate(sql);
+    }
+
 }

@@ -49,6 +49,7 @@ public class AddDotGiamGiaTest {
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
         assertEquals(1, dotGiamGiaService.getList().size());
         assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 
     @Rule
@@ -71,6 +72,7 @@ public class AddDotGiamGiaTest {
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
 //        assertThrows(IllegalArgumentException.class, ()-> dotGiamGiaService.addDotGiamGia(dotGiamGia));
     }
+    
 // Thêm thành công với các trường hợp lệ id 1 ký tự vẫn hợp lệ trong khoảng 1 - 15 --2
     @Test
     public void testAdd3() {
@@ -85,8 +87,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(2, dotGiamGiaService.getList().size());
-        assertTrue(dotGiamGiaService.getList().get(1).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 // Thêm thành công với các trường hợp lệ id 1 ký tự vẫn hợp lệ trong khoảng 1 - 15 --3
     @Test
@@ -102,8 +105,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(3, dotGiamGiaService.getList().size());
-        assertTrue(dotGiamGiaService.getList().get(2).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 // Thêm thành công với các trường hợp lệ id 1 ký tự vẫn hợp lệ trong khoảng 1 - 15 --4
     @Test
@@ -119,8 +123,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(4, dotGiamGiaService.getList().size());
-        assertTrue(dotGiamGiaService.getList().get(3).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 //Check mã nhân viên để trống
     @Test
@@ -240,7 +245,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(5, dotGiamGiaService.getList().size());
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 //Kiểm tra nhập tên đợt giảm có 1 kí tự -6
     @Test
@@ -256,7 +263,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(6, dotGiamGiaService.getList().size());
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 //Kiểm tra nhập tên đợt giảm có 49 kí tự - 7
     @Test
@@ -272,7 +281,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(7, dotGiamGiaService.getList().size());
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 //Kiểm tra nhập tên đợt giảm có 50 kí tự --8
     @Test
@@ -288,7 +299,9 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");
         dotGiamGiaService.addDotGiamGia(dotGiamGia);
-        assertEquals(8, dotGiamGiaService.getList().size());
+        assertEquals(1, dotGiamGiaService.getList().size());
+        assertTrue(dotGiamGiaService.getList().get(0).getMaDotGiamGia().equals(dotGiamGia.getMaDotGiamGia()));
+        dotGiamGiaService.deleteDotGiamGia();
     }
 //Kiểm tra nhập tên đợt giảm có 51 kí tự
     @Test
@@ -421,7 +434,7 @@ public class AddDotGiamGiaTest {
         dotGiamGia.setTenDotGiamGia("Test 2024");
         dotGiamGia.setGiaTriDGG(5);
         dotGiamGia.setSanPhamDGG("1");
-        dotGiamGia.setNgayBatDau("2024-04-06");
+        dotGiamGia.setNgayBatDau("2024-04-08");
         dotGiamGia.setNgayKetThuc("2024-04-01");
         dotGiamGia.setTrangThai(true);
         dotGiamGia.setGhiChuDGG("Mô tả");

@@ -99,6 +99,10 @@ public class DotGiamGiaService {
     public void updateDotGiamGia(DotGiamGia dotGiamGia) {
         dotGiamGiaDAO.update(dotGiamGia);
     }
+    
+    public void deleteDotGiamGia( ){
+        dotGiamGiaDAO.deleteDotGiamGia();
+    }
 
     public List<DotGiamGia> getList() {
         list = dotGiamGiaDAO.selectAll();
