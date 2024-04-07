@@ -11,23 +11,21 @@ import java.util.Date;
  * @author admin
  */
 public class KhachHang {
-    private int maKhachHang;
+    private String maKhachHang;
     private String tenKhachHang;
     private String loaiKhachHang;
-    private boolean gioiTinhKH;
-    private Date ngaySinhKH;
+    private String gioiTinhKH;
+    private String ngaySinhKH;
     private String soDienThoaiKH;
     private String emailKH;
     private String diaChiKH;
-    private int soLuong;
-    private Float tongTien;
-    private boolean trangThaiKH;
+    private String trangThaiKH;
     private String ghiChuKH;
 
     public KhachHang() {
     }
 
-    public KhachHang(int maKhachHang, String tenKhachHang, String loaiKhachHang, boolean gioiTinhKH, Date ngaySinhKH, String soDienThoaiKH, String emailKH, String diaChiKH, boolean trangThaiKH, String ghiChuKH) {
+    public KhachHang(String maKhachHang, String tenKhachHang, String loaiKhachHang, String gioiTinhKH, String ngaySinhKH, String soDienThoaiKH, String emailKH, String diaChiKH, String trangThaiKH, String ghiChuKH) {
         this.maKhachHang = maKhachHang;
         this.tenKhachHang = tenKhachHang;
         this.loaiKhachHang = loaiKhachHang;
@@ -40,11 +38,11 @@ public class KhachHang {
         this.ghiChuKH = ghiChuKH;
     }
 
-    public int getMaKhachHang() {
+    public String getMaKhachHang() {
         return maKhachHang;
     }
 
-    public void setMaKhachHang(int maKhachHang) {
+    public void setMaKhachHang(String maKhachHang) {
         this.maKhachHang = maKhachHang;
     }
 
@@ -64,19 +62,19 @@ public class KhachHang {
         this.loaiKhachHang = loaiKhachHang;
     }
 
-    public boolean isGioiTinhKH() {
+    public String getGioiTinhKH() {
         return gioiTinhKH;
     }
 
-    public void setGioiTinhKH(boolean gioiTinhKH) {
+    public void setGioiTinhKH(String gioiTinhKH) {
         this.gioiTinhKH = gioiTinhKH;
     }
 
-    public Date getNgaySinhKH() {
+    public String getNgaySinhKH() {
         return ngaySinhKH;
     }
 
-    public void setNgaySinhKH(Date ngaySinhKH) {
+    public void setNgaySinhKH(String ngaySinhKH) {
         this.ngaySinhKH = ngaySinhKH;
     }
 
@@ -100,32 +98,15 @@ public class KhachHang {
         return diaChiKH;
     }
 
-    public int getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
-    }
-
-    public Float getTongTien() {
-        return tongTien;
-    }
-
-    public void setTongTien(Float tongTien) {
-        this.tongTien = tongTien;
-    }
-
-    
     public void setDiaChiKH(String diaChiKH) {
         this.diaChiKH = diaChiKH;
     }
 
-    public boolean isTrangThaiKH() {
+    public String getTrangThaiKH() {
         return trangThaiKH;
     }
 
-    public void setTrangThaiKH(boolean trangThaiKH) {
+    public void setTrangThaiKH(String trangThaiKH) {
         this.trangThaiKH = trangThaiKH;
     }
 
@@ -137,11 +118,6 @@ public class KhachHang {
         this.ghiChuKH = ghiChuKH;
     }
 
-     @Override
-    public String toString() {
-        return this.loaiKhachHang;
-    }
-    
     
     
 }

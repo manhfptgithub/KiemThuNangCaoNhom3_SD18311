@@ -22,21 +22,21 @@ public class KhachHangDAO extends DuAn1DAO<KhachHang, Integer> {
             + "VALUES (?,?,?,?,?,?,?,?,?)";
 
     final String UPDATE_SQL = "UPDATE tblKhachHang SET TenKhachHang = ?,LoaiKhachHang= ?,GioiTinhKH =? ,NgaySinhKH = ?,SoDienThoaiKH  = ?,EmailKH = ?, DiaChiKH = ?,TrangThaiKH = ?, GhiChuKH =? WHERE MaKhachHang = ? ";
-    final String SELECT_ALL_SQL = "SELECT * FROM tblKhachHang WHERE TrangThaiKH = 1";
+    final String SELECT_ALL_SQL = "SELECT * FROM tblKhachHang";
     final String SELECT_BY_ID_SQL = "SELECT * FROM tblKhachHang WHERE MaKhachHang = ?";
     final String UPDATE_TT = "UPDATE tblKhachHang SET TrangThaiKH = 0 WHERE MaKhachHang = ?";
 
     @Override
     public void insert(KhachHang entity) {
         JDBCHelper.executeUpdate(INSERT_SQL, entity.getTenKhachHang(), entity.getLoaiKhachHang(),
-                entity.isGioiTinhKH(), entity.getNgaySinhKH(), entity.getSoDienThoaiKH(),
-                entity.getEmailKH(), entity.getDiaChiKH(), entity.isTrangThaiKH(), entity.getGhiChuKH());
+                entity.getGioiTinhKH(), entity.getNgaySinhKH(), entity.getSoDienThoaiKH(),
+                entity.getEmailKH(), entity.getDiaChiKH(), entity.getTrangThaiKH(), entity.getGhiChuKH());
     }
 
     @Override
     public void update(KhachHang entity) {
-        JDBCHelper.executeUpdate(UPDATE_SQL, entity.getTenKhachHang(), entity.getLoaiKhachHang(), entity.isGioiTinhKH(), entity.getNgaySinhKH(),
-                entity.getSoDienThoaiKH(), entity.getEmailKH(), entity.getDiaChiKH(), entity.isTrangThaiKH(), entity.getGhiChuKH(),
+        JDBCHelper.executeUpdate(UPDATE_SQL, entity.getTenKhachHang(), entity.getLoaiKhachHang(), entity.getGioiTinhKH(), entity.getNgaySinhKH(),
+                entity.getSoDienThoaiKH(), entity.getEmailKH(), entity.getDiaChiKH(), entity.getTrangThaiKH(), entity.getGhiChuKH(),
                 entity.getMaKhachHang());
 
     }
@@ -62,15 +62,15 @@ public class KhachHangDAO extends DuAn1DAO<KhachHang, Integer> {
             ResultSet rs = JDBCHelper.executeQuery(sql, args);
             while (rs.next()) {
                 KhachHang entity = new KhachHang();
-                entity.setMaKhachHang(rs.getInt("MaKhachHang"));
+                entity.setMaKhachHang(rs.getString("MaKhachHang"));
                 entity.setTenKhachHang(rs.getString("TenKhachHang"));
                 entity.setLoaiKhachHang(rs.getString("LoaiKhachHang"));
-                entity.setGioiTinhKH(rs.getBoolean("GioiTinhKH"));
-                entity.setNgaySinhKH(rs.getDate("NgaySinhKH"));
+                entity.setGioiTinhKH(rs.getString("GioiTinhKH"));
+                entity.setNgaySinhKH(rs.getString("NgaySinhKH"));
                 entity.setSoDienThoaiKH(rs.getString("SoDienThoaiKH"));
                 entity.setEmailKH(rs.getString("EmailKH"));
                 entity.setDiaChiKH(rs.getString("DiaChiKH"));
-                entity.setTrangThaiKH(rs.getBoolean("TrangThaiKH"));
+                entity.setTrangThaiKH(rs.getString("TrangThaiKH"));
                 entity.setGhiChuKH(rs.getString("GhiChuKH"));
                 list.add(entity);
             }
@@ -206,10 +206,10 @@ public class KhachHangDAO extends DuAn1DAO<KhachHang, Integer> {
             ResultSet rs = JDBCHelper.executeQuery(sql);
             while(rs.next()){
                 KhachHang kh = new KhachHang();
-            kh.setMaKhachHang(rs.getInt(1));
+            kh.setMaKhachHang(rs.getString(1));
             kh.setTenKhachHang(rs.getString(2));
-            kh.setSoLuong(rs.getInt(3));
-            kh.setTongTien(rs.getFloat(4));
+//            kh.setSoLuong(rs.getInt(3));
+//            kh.setTongTien(rs.getFloat(4));
             list.add(kh);
             }
             return list;
